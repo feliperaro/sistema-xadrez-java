@@ -37,7 +37,7 @@ public class PartidaDeXadrez {
 	
 	private void validaPosicaoOrigem(Posicao posicao) {
 		if (!tabuleiro.temUmaPeca(posicao)) {
-			throw new ChessException("Não existe peça na posição de origem!");
+			throw new ChessException("Nao existe peca na posicao de origem!");
 		}
 	}
 	
