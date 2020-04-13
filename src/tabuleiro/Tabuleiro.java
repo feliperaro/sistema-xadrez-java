@@ -64,7 +64,7 @@ public class Tabuleiro {
 		}
 		Peca aux = peca(posicao);
 		aux.posicao = null;
-		pecas[posicao.getColuna()][posicao.getLinha()] = null;
+		pecas[posicao.getLinha()][posicao.getColuna()] = null;
 		return aux;
 	}
 	
