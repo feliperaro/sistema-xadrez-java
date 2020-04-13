@@ -54,6 +54,20 @@ public class Tabuleiro {
 		return posicaoExiste(posicao.getLinha(), posicao.getColuna());
 	}
 	
+	public Peca removePeca(Posicao posicao) {
+		if (!posicaoExiste(posicao)) {
+			throw new BoardException("Posição inexistente no tabuleiro!");
+		}
+		
+		if (peca(posicao) == null) {
+			return null;
+		}
+		Peca aux = peca(posicao);
+		aux.posicao = null;
+		pecas[posicao.getColuna()][posicao.getLinha()] = null;
+		return aux;
+	}
+	
 	public boolean temUmaPeca(Posicao posicao) {
 		if (!posicaoExiste(posicao)) {
 			throw new BoardException("Posição inexistente no tabuleiro!");
