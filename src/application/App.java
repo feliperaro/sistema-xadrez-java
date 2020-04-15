@@ -19,7 +19,7 @@ public class App {
 			try {
 				UI.clearScreen();
 				
-				UI.printTabuleiro(partida.getPecas());
+				UI.printPartida(partida);
 				
 				System.out.println();
 				
