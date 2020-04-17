@@ -38,7 +38,7 @@ public class App {
 				System.out.print("Destino: ");
 				PosicaoXadrez destino = UI.lePosicaoXadrez(sc);
 				
-				PecaDeXadrez pecaCapturada = partida.movePeca(origem, destino);
+				PecaDeXadrez pecaCapturada = partida.executaMovimentoDeXadrez(origem, destino);
 				
 				if (pecaCapturada != null) {
 					capturada.add(pecaCapturada);

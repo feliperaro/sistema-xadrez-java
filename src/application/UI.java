@@ -53,10 +53,17 @@ public class UI {
 
 	public static void printPartida(PartidaDeXadrez partida, List<PecaDeXadrez> capturada) {
 		printTabuleiro(partida.getPecas());
+		
 		System.out.println();
+		
 		printPecasCapturadas(capturada);
+		
 		System.out.println("Turno: " + partida.getTurno());
-		System.out.println("Aguardando jogador: " + partida.jogadorAtual());
+		System.out.println("Aguardando jogador: " + partida.getJogadorAtual());
+		
+		if (partida.getCheck()) {
+			System.out.println("CHECK!");
+		}
 	}
 	
 	// UI User Interface
