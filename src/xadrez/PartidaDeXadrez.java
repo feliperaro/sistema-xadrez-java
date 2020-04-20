@@ -2,7 +2,6 @@ package xadrez;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import tabuleiro.Peca;
@@ -109,7 +108,8 @@ public class PartidaDeXadrez {
 	}
 	
 	private Peca fazMovimento(Posicao origem, Posicao destino) {
-		Peca p = tabuleiro.removePeca(origem);
+		PecaDeXadrez p = (PecaDeXadrez)tabuleiro.removePeca(origem);
+		p.aumentaContagemMovimento();
 		Peca pecaCapturada = tabuleiro.removePeca(destino);
 		tabuleiro.lugarPeca(p, destino);
 		
@@ -122,7 +122,8 @@ public class PartidaDeXadrez {
 	}
 	
 	private void desfazMovimento(Posicao origem, Posicao destino, Peca pecaCapturada) {
-		Peca p = tabuleiro.removePeca(destino);
+		PecaDeXadrez p = (PecaDeXadrez)tabuleiro.removePeca(destino);
+		p.diminuiContagemMovimento();
 		tabuleiro.lugarPeca(p, origem);
 		
 		if (pecaCapturada != null) {
