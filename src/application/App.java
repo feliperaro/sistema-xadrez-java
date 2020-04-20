@@ -49,8 +49,12 @@ public class App {
 				}
 				
 				if (partida.getPromovido() != null) {
-					System.out.println("Entre com a peca para ser promovida (B/C/T/Q)");
+					System.out.print("Entre com a peca para ser promovida: (B/C/T/Q)");
 					String tipo = sc.nextLine().toUpperCase();
+					while (!tipo.equals("B") && !tipo.equals("C") && !tipo.equals("T") && !tipo.equals("Q")) {
+						System.out.print("Valor invalido! Entre com a peca para ser promovida: (B/C/T/Q)");
+						tipo = sc.nextLine().toUpperCase();
+					}
 					partida.trocaPecaPromovida(tipo);
 				}
 			}
