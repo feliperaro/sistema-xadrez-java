@@ -8,11 +8,11 @@ import xadrez.PecaDeXadrez;
 
 public class Rei extends PecaDeXadrez {
 	
-	private PartidaDeXadrez partidaDeXadrex;
+	private PartidaDeXadrez partidaDeXadrez;
 
 	public Rei(Tabuleiro tabuleiro, Cor cor, PartidaDeXadrez partidaDeXadrex) {
 		super(tabuleiro, cor);
-		this.partidaDeXadrex = partidaDeXadrex;
+		this.partidaDeXadrez = partidaDeXadrex;
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class Rei extends PecaDeXadrez {
 		}
 
 		//movimento especial Roque
-		if (getContagemMovimento() == 0 && !partidaDeXadrex.getCheck()) {
+		if (getContagemMovimento() == 0 && !partidaDeXadrez.getCheck()) {
 			//Roque pequeno
 			Posicao posicaoTorre1 = new Posicao(posicao.getLinha(), posicao.getColuna() + 3);
 			if (testeTorreRoque(posicaoTorre1)) {
