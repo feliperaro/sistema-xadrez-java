@@ -40,7 +40,7 @@ public class Tabuleiro {
 	
 	public void lugarPeca(Peca peca, Posicao posicao) {
 		if (temUmaPeca(posicao)) {
-			throw new BoardException("Já tem uma peça na posição " + posicao);
+			throw new BoardException("Já tem uma peca na posicao " + posicao);
 		}
 		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
 		peca.posicao = posicao;
