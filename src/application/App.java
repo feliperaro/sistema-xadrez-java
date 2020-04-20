@@ -26,6 +26,10 @@ public class App {
 				
 				System.out.println();
 				
+				System.out.println("Q = Rainha\nK = Rei\nT = Torre\nC = Cavalo\nB = Bispo\nP = Peao");
+				
+				System.out.println();
+				
 				System.out.print("Origem: ");
 				PosicaoXadrez origem = UI.lePosicaoXadrez(sc);
 				
@@ -42,6 +46,12 @@ public class App {
 				
 				if (pecaCapturada != null) {
 					capturada.add(pecaCapturada);
+				}
+				
+				if (partida.getPromovido() != null) {
+					System.out.println("Entre com a peca para ser promovida (B/C/T/Q)");
+					String tipo = sc.nextLine().toUpperCase();
+					partida.trocaPecaPromovida(tipo);
 				}
 			}
 			catch (ChessException e) {
